@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlphaTrade AI - Smart Trading Signals</title>
+    
+    <!-- Meta Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1991277574974906');
+      fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1991277574974906&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00f2fe;
+            --secondary: #4facfe;
+            --accent: #00ff9d;
+            --dark: #0f172a;
+            --darker: #020617;
+            --light: #f8fafc;
+            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            margin: 0;
+            padding: 0;
+            background-image: 
+                url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80'),
+                linear-gradient(to bottom, rgba(15, 23, 42, 0.9), rgba(2, 6, 23, 0.95));
+            background-blend-mode: overlay;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            min-height: 100vh;
+        }
+        
+        /* [Rest of your CSS remains exactly the same] */
+        
+    </style>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <span class="logo-icon">⚡</span>
+                    AlphaTrade AI
+                </div>
+                <div class="nav-links">
+                    <a href="#features" class="nav-link">Features</a>
+                    <a href="#how-it-works" class="nav-link">How It Works</a>
+                    <a href="#testimonials" class="nav-link">Testimonials</a>
+                    <a href="#cta" class="nav-link">Get Access</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="animate__animated animate__fadeInDown">DOMINATE THE MARKETS WITH AI POWER</h1>
+            <p class="animate__animated animate__fadeIn animate__delay-1s">Our predictor bot analyzes markets 24/7 to deliver the most accurate trading signals directly to your Telegram. Make informed decisions and maximize your profits.</p>
+            <a href="https://t.me/Nimal_money_bot?start=link_OGeFylCEz1" class="cta-button animate__animated animate__fadeInUp animate__delay-1s pulse" onclick="fbq('track', 'Lead')">
+                Access Bot on Telegram
+                <span class="telegram-icon">📩</span>
+            </a>
+        </div>
+    </section>
+    
+    <!-- [Rest of your HTML remains exactly the same until the final CTA section] -->
+    
+    <section class="cta-section" id="cta">
+        <div class="container">
+            <h2 class="animate__animated animate__fadeIn">READY TO REVOLUTIONIZE YOUR TRADING?</h2>
+            <p class="animate__animated animate__fadeIn animate__delay-1s">Join thousands of traders who are already leveraging AI power to make smarter decisions in financial markets.</p>
+            <a href="https://t.me/Nimal_money_bot?start=link_OGeFylCEz1" class="cta-button animate__animated animate__pulse animate__infinite" onclick="fbq('track', 'Lead')">
+                Get Free Access Now
+                <span class="telegram-icon">🚀</span>
+            </a>
+        </div>
+    </section>
+    
+    <!-- [Footer remains the same] -->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script>
+        // [Your existing JavaScript remains the same]
+        
+        // Add this to track conversions when users click the Telegram link
+        document.querySelectorAll('a[href*="t.me/Nimal_money_bot"]').forEach(link => {
+            link.addEventListener('click', function() {
+                fbq('track', 'InitiateCheckout');
+            });
+        });
+    </script>
+</body>
+</html>
