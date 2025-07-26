@@ -52,8 +52,706 @@
             min-height: 100vh;
         }
         
-        /* [Rest of your CSS remains exactly the same] */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
         
+        header {
+            padding: 25px 0;
+            position: relative;
+            z-index: 100;
+        }
+        
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: flex;
+            align-items: center;
+            letter-spacing: 1px;
+        }
+        
+        .logo-icon {
+            margin-right: 12px;
+            font-size: 32px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-link {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            position: relative;
+            opacity: 0.9;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            opacity: 1;
+            color: var(--primary);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .hero {
+            padding: 100px 0 150px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(0, 242, 254, 0.1) 0%, transparent 70%);
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 52px;
+            margin-bottom: 25px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.2;
+            letter-spacing: 1px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            line-height: 1.6;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 40px;
+            background: var(--gradient);
+            color: var(--darker);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 18px;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 15px rgba(0, 242, 254, 0.3);
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+            z-index: 1;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 242, 254, 0.4);
+        }
+        
+        .cta-button:hover::before {
+            opacity: 1;
+        }
+        
+        .cta-button:active {
+            transform: translateY(1px);
+        }
+        
+        .telegram-icon {
+            margin-left: 10px;
+            font-size: 22px;
+        }
+        
+        .features {
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        .features::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, rgba(2, 6, 23, 0.7));
+            z-index: 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 40px;
+            margin-bottom: 70px;
+            position: relative;
+            color: var(--light);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .feature-card {
+            background: rgba(15, 23, 42, 0.7);
+            border-radius: 16px;
+            padding: 40px 30px;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(74, 222, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 242, 254, 0.05), rgba(79, 172, 254, 0.05));
+            z-index: -1;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 242, 254, 0.1);
+            border-color: rgba(74, 222, 255, 0.3);
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 242, 254, 0.1);
+            margin-bottom: 25px;
+            font-size: 30px;
+            color: var(--primary);
+        }
+        
+        .feature-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--light);
+            letter-spacing: 0.5px;
+        }
+        
+        .feature-desc {
+            opacity: 0.85;
+            line-height: 1.7;
+            font-size: 16px;
+        }
+        
+        .stats {
+            padding: 100px 0;
+            background: linear-gradient(to right, rgba(15, 23, 42, 0.8), rgba(2, 6, 23, 0.9));
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stats::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(0, 255, 157, 0.03) 0%, transparent 70%);
+            transform: rotate(30deg);
+            z-index: 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 50px;
+            margin-top: 70px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .stat-item {
+            position: relative;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 60px;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 15px;
+            line-height: 1;
+        }
+        
+        .stat-label {
+            font-size: 18px;
+            opacity: 0.9;
+            font-weight: 600;
+        }
+        
+        .how-it-works {
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 25px;
+            background: rgba(15, 23, 42, 0.7);
+            border-radius: 16px;
+            padding: 30px;
+            position: relative;
+            z-index: 1;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(74, 222, 255, 0.1);
+            transition: all 0.4s ease;
+        }
+        
+        .step:hover {
+            transform: translateX(10px);
+            border-color: rgba(74, 222, 255, 0.3);
+        }
+        
+        .step-number {
+            background: var(--gradient);
+            color: var(--darker);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 20px;
+        }
+        
+        .step-content {
+            flex-grow: 1;
+        }
+        
+        .step-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 22px;
+            margin-bottom: 12px;
+            color: var(--light);
+            letter-spacing: 0.5px;
+        }
+        
+        .step-desc {
+            opacity: 0.85;
+            line-height: 1.7;
+        }
+        
+        .steps::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 75px;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            z-index: 0;
+        }
+        
+        .testimonials {
+            padding: 100px 0;
+            background: linear-gradient(to right, rgba(15, 23, 42, 0.8), rgba(2, 6, 23, 0.9));
+            position: relative;
+        }
+        
+        .testimonial {
+            background: rgba(15, 23, 42, 0.7);
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(74, 222, 255, 0.1);
+            position: relative;
+        }
+        
+        .testimonial::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 80px;
+            font-family: Georgia, serif;
+            color: rgba(0, 242, 254, 0.2);
+            line-height: 1;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--gradient);
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--darker);
+            font-weight: 700;
+        }
+        
+        .author-info {
+            text-align: left;
+        }
+        
+        .author-name {
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .author-role {
+            opacity: 0.7;
+            font-size: 14px;
+        }
+        
+        .cta-section {
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 242, 254, 0.1), rgba(79, 172, 254, 0.1));
+            z-index: -1;
+        }
+        
+        .cta-section::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(0, 255, 157, 0.05) 0%, transparent 70%);
+            transform: rotate(15deg);
+            z-index: -1;
+        }
+        
+        .cta-section h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 42px;
+            margin-bottom: 25px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .cta-section p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        footer {
+            padding: 60px 0 30px;
+            background-color: rgba(2, 6, 23, 0.9);
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+        
+        .footer-logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 30px;
+            display: inline-block;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-link {
+            color: var(--light);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+            font-size: 15px;
+        }
+        
+        .footer-link:hover {
+            opacity: 1;
+            color: var(--primary);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .social-link {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            color: var(--light);
+            font-size: 18px;
+            text-decoration: none;
+        }
+        
+        .social-link:hover {
+            background: var(--gradient);
+            color: var(--darker);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            opacity: 0.6;
+            font-size: 14px;
+            margin-top: 30px;
+        }
+        
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        /* Particles effect */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        .particle {
+            position: absolute;
+            background: rgba(0, 242, 254, 0.5);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 42px;
+            }
+            
+            .section-title {
+                font-size: 36px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .nav-links {
+                gap: 20px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+            
+            .steps::before {
+                left: 65px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 30px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .stat-number {
+                font-size: 48px;
+            }
+            
+            .step {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .steps::before {
+                display: none;
+            }
+            
+            .testimonial {
+                padding: 30px 20px;
+            }
+            
+            .cta-section h2 {
+                font-size: 36px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -87,7 +785,112 @@
         </div>
     </section>
     
-    <!-- [Rest of your HTML remains exactly the same until the final CTA section] -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title animate__animated animate__fadeIn">CUTTING-EDGE TECHNOLOGY</h2>
+            <div class="features-grid">
+                <div class="feature-card animate__animated animate__fadeInUp">
+                    <div class="feature-icon">🤖</div>
+                    <h3 class="feature-title">Advanced AI Algorithm</h3>
+                    <p class="feature-desc">Our system uses deep learning to analyze market patterns with unprecedented accuracy, processing millions of data points every second.</p>
+                </div>
+                
+                <div class="feature-card animate__animated animate__fadeInUp animate__delay-1s">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Real-Time Signals</h3>
+                    <p class="feature-desc">Receive instant alerts with calculated entry points, exit targets and stop loss levels to maximize gains and minimize risks.</p>
+                </div>
+                
+                <div class="feature-card animate__animated animate__fadeInUp animate__delay-2s">
+                    <div class="feature-icon">🌐</div>
+                    <h3 class="feature-title">Multi-Market Coverage</h3>
+                    <p class="feature-desc">From cryptocurrencies to forex and stocks, our bot monitors all financial markets to find you the best opportunities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="stats">
+        <div class="container">
+            <h2 class="section-title animate__animated animate__fadeIn">PROVEN RESULTS</h2>
+            <div class="stats-grid">
+                <div class="stat-item animate__animated animate__fadeIn">
+                    <div class="stat-number float">94.7%</div>
+                    <div class="stat-label">Accuracy Rate</div>
+                </div>
+                
+                <div class="stat-item animate__animated animate__fadeIn animate__delay-1s">
+                    <div class="stat-number float">0.2s</div>
+                    <div class="stat-label">Average Latency</div>
+                </div>
+                
+                <div class="stat-item animate__animated animate__fadeIn animate__delay-2s">
+                    <div class="stat-number float">24/7</div>
+                    <div class="stat-label">Market Monitoring</div>
+                </div>
+                
+                <div class="stat-item animate__animated animate__fadeIn animate__delay-3s">
+                    <div class="stat-number float">10K+</div>
+                    <div class="stat-label">Monthly Signals</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <h2 class="section-title animate__animated animate__fadeIn">HOW TO GET STARTED</h2>
+            <div class="steps">
+                <div class="step animate__animated animate__fadeInRight">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Access Our Telegram Bot</h3>
+                        <p class="step-desc">Click the access button and start interacting with our AI predictor directly on Telegram.</p>
+                    </div>
+                </div>
+                
+                <div class="step animate__animated animate__fadeInRight animate__delay-1s">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Configure Your Preferences</h3>
+                        <p class="step-desc">Select the markets you're interested in and your preferred risk level for trading.</p>
+                    </div>
+                </div>
+                
+                <div class="step animate__animated animate__fadeInRight animate__delay-2s">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Receive Precise Signals</h3>
+                        <p class="step-desc">Our bot will send you alerts with the best opportunities identified by our AI.</p>
+                    </div>
+                </div>
+                
+                <div class="step animate__animated animate__fadeInRight animate__delay-3s">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Trade With Confidence</h3>
+                        <p class="step-desc">Execute trades on your preferred platform following our recommendations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title animate__animated animate__fadeIn">WHAT OUR TRADERS SAY</h2>
+            <div class="testimonial animate__animated animate__fadeIn">
+                <p class="testimonial-text">"Since I started using AlphaTrade AI, my profitability has increased by 68%. The signals are extremely accurate and arrive at the optimal time to trade. The best part is I can receive them directly on my phone while on the go."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">JM</div>
+                    <div class="author-info">
+                        <div class="author-name">John Miller</div>
+                        <div class="author-role">Professional Trader - 5 years experience</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     
     <section class="cta-section" id="cta">
         <div class="container">
@@ -100,16 +903,116 @@
         </div>
     </section>
     
-    <!-- [Footer remains the same] -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">AlphaTrade AI</div>
+            <div class="footer-links">
+                <a href="#" class="footer-link">Terms of Service</a>
+                <a href="#" class="footer-link">Privacy Policy</a>
+                <a href="#" class="footer-link">Support</a>
+                <a href="#" class="footer-link">FAQ</a>
+            </div>
+            <div class="social-links">
+                <a href="#" class="social-link">💬</a>
+                <a href="#" class="social-link">📱</a>
+                <a href="#" class="social-link">✉️</a>
+            </div>
+            <div class="copyright">© 2023 AlphaTrade AI. All rights reserved.</div>
+        </div>
+    </footer>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script>
-        // [Your existing JavaScript remains the same]
-        
-        // Add this to track conversions when users click the Telegram link
-        document.querySelectorAll('a[href*="t.me/Nimal_money_bot"]').forEach(link => {
-            link.addEventListener('click', function() {
-                fbq('track', 'InitiateCheckout');
+        // Create animated particles
+        document.addEventListener('DOMContentLoaded', function() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random size between 2px and 6px
+                const size = Math.random() * 4 + 2;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Random initial position
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                
+                // Random opacity
+                particle.style.opacity = Math.random() * 0.5 + 0.1;
+                
+                // Add to container
+                particlesContainer.appendChild(particle);
+                
+                // GSAP animation
+                const duration = Math.random() * 20 + 10;
+                const delay = Math.random() * 5;
+                
+                gsap.to(particle, {
+                    x: `${(Math.random() - 0.5) * 200}px`,
+                    y: `${(Math.random() - 0.5) * 200}px`,
+                    duration: duration,
+                    delay: delay,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: "sine.inOut"
+                });
+            }
+            
+            // Scroll animation for elements
+            const animateOnScroll = function() {
+                const elements = document.querySelectorAll('.feature-card, .step, .testimonial, .stat-item');
+                
+                elements.forEach(el => {
+                    const elementPosition = el.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementPosition < windowHeight - 100) {
+                        el.classList.add('animate__animated', 'animate__fadeInUp');
+                    }
+                });
+            };
+            
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll(); // Run on load
+            
+            // 3D hover effect on cards
+            const cards = document.querySelectorAll('.feature-card');
+            cards.forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const x = e.clientX - card.getBoundingClientRect().left;
+                    const y = e.clientY - card.getBoundingClientRect().top;
+                    
+                    const centerX = card.offsetWidth / 2;
+                    const centerY = card.offsetHeight / 2;
+                    
+                    const angleX = (y - centerY) / 20;
+                    const angleY = (centerX - x) / 20;
+                    
+                    gsap.to(card, {
+                        rotateX: angleX,
+                        rotateY: angleY,
+                        duration: 0.5
+                    });
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    gsap.to(card, {
+                        rotateX: 0,
+                        rotateY: 0,
+                        duration: 0.5
+                    });
+                });
+            });
+            
+            // Track Telegram link clicks
+            document.querySelectorAll('a[href*="t.me/Nimal_money_bot"]').forEach(link => {
+                link.addEventListener('click', function() {
+                    fbq('track', 'InitiateCheckout');
+                });
             });
         });
     </script>
